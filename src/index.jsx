@@ -2,7 +2,7 @@
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { weatherForecast } from './store/reducers/index';
+import weatherForecast from './store/reducers/index';
 import App from './components/App/App';
 
 const store = createStore(weatherForecast);
