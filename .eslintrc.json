@@ -24,6 +24,7 @@
         "react/react-in-jsx-scope": "off",
         "import/prefer-default-export": "off",
         "import/no-unresolved": "off",
-        "default-param-last": "warn"
+        "default-param-last": "warn",
+        "react/destructuring-assignment": ["<enabled>", "never"]
     }
 }

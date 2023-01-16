@@ -1,38 +1,28 @@
 // import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-function DataFetched(data) {
-    return data !== null;
-}
-
 function BaseWeather() {
-    const currentCity = useSelector((state) => state.city.name);
-    const weather = useSelector((state) =>
-        DataFetched(state.city.data) ? state.city.data.weather[0].main : ''
-    );
+    const [dataFetched, setDataFetched] = useState(false);
+    const cityWeatherData = useSelector((state) => state.city);
 
-    const temp = useSelector((state) =>
-        DataFetched(state.city.data) ? state.city.data.main.temp : ''
-    );
+    useEffect(() => {
+        if (cityWeatherData.data !== null) {
+            setDataFetched(true);
+        }
+    }, [cityWeatherData]);
 
-    const tempFeelsLike = useSelector((state) =>
-        DataFetched(state.city.data) ? state.city.data.main.feels_like : ''
-    );
-    const visibility = useSelector((state) =>
-        DataFetched(state.city.data) ? state.city.data.visibility : ''
-    );
-    const windSpeed = useSelector((state) =>
-        DataFetched(state.city.data) ? state.city.data.wind.speed : ''
-    );
-    return (
-        <div hidden={DataFetched}>
-            <h1>{currentCity}</h1>
-            <h1>weather: {weather}</h1>
-            <h1>temp: {temp}</h1>
-            <h1>tempFeelsLike: {tempFeelsLike}</h1>
-            <h1>visibility: {visibility}m</h1>
-            <h1>windSpeed: {windSpeed}</h1>
+    return dataFetched ? (
+        <div>
+            <h1>{cityWeatherData.name}</h1>
+            <h1>weather: {cityWeatherData.data.weather[0].main}</h1>
+            <h1>temp: {cityWeatherData.data.main.temp}</h1>
+            <h1>tempFeelsLike: {cityWeatherData.data.main.feels_like}</h1>
+            <h1>visibility: {cityWeatherData.data.visibility}m</h1>
+            <h1>windSpeed: {cityWeatherData.data.wind.speed}</h1>
         </div>
+    ) : (
+        <div />
     );
 }
 
