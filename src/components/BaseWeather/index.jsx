@@ -19,7 +19,7 @@ function BaseWeather() {
             <h1>temp: {cityWeatherData.data.main.temp}</h1>
             <h1>tempFeelsLike: {cityWeatherData.data.main.feels_like}</h1>
             <h1>visibility: {cityWeatherData.data.visibility}m</h1>
-            <h1>windSpeed: {cityWeatherData.data.wind.speed}</h1>
+            <h1>windSpeed: {cityWeatherData.data.wind.speed}m/s</h1>
         </div>
     ) : (
         <div />

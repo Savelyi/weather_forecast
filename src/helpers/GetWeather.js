@@ -9,6 +9,7 @@ function GetWeather(city, dispatch) {
             params: {
                 q: city,
                 appid: apiWeatherKey,
+                units: 'metric',
             },
         })
         .then((response) =>
