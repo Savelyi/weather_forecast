@@ -1,24 +1,19 @@
 import axios from 'axios';
 // import { useDispatch } from 'react-redux';
-import { apiKey } from '../constants/apiKey';
+import { apiWeatherKey } from '../constants/apiKeys';
 import { changeCity } from '../store/actions/changeCity';
 
 function GetWeather(city, dispatch) {
-    // const dispatch = useDispatch();
     return axios
         .get('https://api.openweathermap.org/data/2.5/weather', {
             params: {
                 q: city,
-                appid: apiKey,
+                appid: apiWeatherKey,
             },
         })
         .then((response) =>
             dispatch(changeCity(response.data.name, response.data))
         );
-
-    // .catch((error) => {
-    //     console.log(error.message);
-    // });
 }
 
 export default GetWeather;
