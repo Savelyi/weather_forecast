@@ -1,11 +1,15 @@
+// import SetWeatherForCity from '../../helpers/setWeatherForCity';
+
 const defaultState = {
-    city: 'Moscow'
+    name: '',
+    data: {},
 };
 
 export const cityForecast = (state = defaultState, action) => {
     switch (action.type) {
         case 'CHANGE_CITY':
-            return { ...state, city: action.city };
+            console.log(action);
+            return { ...state, city: action.city, data: action.data };
         default:
             return state;
     }
