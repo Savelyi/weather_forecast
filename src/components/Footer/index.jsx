@@ -1,7 +1,7 @@
-import SetCityForm from '../../forms/index';
+import CurrentCity from '../CurrentCity/index';
 
 function Footer() {
-    return <SetCityForm />;
+    return <CurrentCity />;
 }
 
 export default Footer;
