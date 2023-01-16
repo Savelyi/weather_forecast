@@ -25,6 +25,6 @@
         "import/prefer-default-export": "off",
         "import/no-unresolved": "off",
         "default-param-last": "warn",
-        "react/destructuring-assignment": ["<enabled>", "never"]
+        "react/destructuring-assignment": "off"
     }
 }
