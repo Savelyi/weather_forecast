@@ -2,7 +2,7 @@
 
 const defaultState = {
     name: ' ',
-    data: {},
+    data: null,
 };
 
 export const cityForecast = (state = defaultState, action) => {
