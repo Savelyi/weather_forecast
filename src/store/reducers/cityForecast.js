@@ -1,7 +1,7 @@
 // import SetWeatherForCity from '../../helpers/setWeatherForCity';
 
 const defaultState = {
-    name: ' ',
+    name: null,
     data: null,
 };
 

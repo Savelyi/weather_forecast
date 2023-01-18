@@ -1,20 +1,21 @@
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import GetWeather from '../helpers/GetWeather';
 import GetUserLocation from '../helpers/GetUserLocation';
 
 function SetCityForm() {
     const [city, setCity] = useState('');
     const dispatch = useDispatch();
-
+    const cityWeatherData = useSelector((state) => state.city.name);
     useEffect(() => {
-        const userCity = GetUserLocation(setCity);
+        if (cityWeatherData !== null) return;
+        const userCity = GetUserLocation();
         userCity.then((res) => {
             GetWeather(res, dispatch);
         });
     }, []);
 
-    const handleClick = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         if (city.trim() === '') {
             return;
@@ -28,7 +29,7 @@ function SetCityForm() {
 
     return (
         <div>
-            <form onSubmit={handleClick}>
+            <form onSubmit={handleSubmit}>
                 <input value={city} onChange={handleChange} />
                 <button type="submit">find</button>
             </form>
