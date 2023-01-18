@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { apiAbstractKey } from '../constants/apiKeys';
+import { apiAbstractUrl } from '../constants/apiUrls';
 
-function GetUserLocation () {
+function GetUserLocation() {
     return axios
-        .get('https://ipgeolocation.abstractapi.com/v1/', {
+        .get(apiAbstractUrl, {
             params: {
-                api_key: apiAbstractKey,
+                api_key: process.env.REACT_APP_API_ABSTRACT_KEY,
             },
         })
         .then((response) => response.data.city);

@@ -1,14 +1,13 @@
 import axios from 'axios';
-// import { useDispatch } from 'react-redux';
-import { apiWeatherKey } from '../constants/apiKeys';
 import { changeCity } from '../store/actions/changeCity';
+import { apiWeatherUrl } from '../constants/apiUrls';
 
 function GetWeather(city, dispatch) {
     return axios
-        .get('https://api.openweathermap.org/data/2.5/weather', {
+        .get(apiWeatherUrl, {
             params: {
                 q: city,
-                appid: apiWeatherKey,
+                appid: process.env.REACT_APP_API_WEATHER_KEY,
                 units: 'metric',
             },
         })
