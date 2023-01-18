@@ -9,7 +9,7 @@ function BaseWeather() {
         if (data !== null) {
             setDataFetched(true);
         }
-    }, []);
+    }, [data!==null]);
 
     return dataFetched ? (
         <div>

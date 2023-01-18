@@ -6,10 +6,10 @@ import GetUserLocation from '../helpers/GetUserLocation';
 function SetCityForm() {
     const [city, setCity] = useState('');
     const dispatch = useDispatch();
-    const cityWeatherData = useSelector((state) => state.city.name);
-   
+    const stateCityName = useSelector((state) => state.city.name);
+
     useEffect(() => {
-        if (cityWeatherData !== null) return;
+        if (stateCityName !== null) return;
         const userCity = GetUserLocation();
         userCity.then((res) => {
             GetWeather(res, dispatch);
@@ -18,7 +18,7 @@ function SetCityForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (city.trim() === '') {
+        if (city.trim() === '' || stateCityName === city) {
             return;
         }
         GetWeather(city, dispatch);
