@@ -1,5 +1,5 @@
 import BaseWeather from '../BaseWeather';
-import Footer from '../Footer';
+import Footer from '../Footer/index';
 
 function App() {
     return (
