@@ -7,6 +7,7 @@ function SetCityForm() {
     const [city, setCity] = useState('');
     const dispatch = useDispatch();
     const cityWeatherData = useSelector((state) => state.city.name);
+   
     useEffect(() => {
         if (cityWeatherData !== null) return;
         const userCity = GetUserLocation();

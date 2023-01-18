@@ -3,22 +3,22 @@ import { useSelector } from 'react-redux';
 
 function BaseWeather() {
     const [dataFetched, setDataFetched] = useState(false);
-    const cityWeatherData = useSelector((state) => state.city);
-
+    const { name, data } = useSelector((state) => state.city);
+    
     useEffect(() => {
-        if (cityWeatherData.data !== null) {
+        if (data !== null) {
             setDataFetched(true);
         }
-    }, [cityWeatherData]);
+    }, []);
 
     return dataFetched ? (
         <div>
-            <h1>{cityWeatherData.name}</h1>
-            <h1>weather: {cityWeatherData.data.weather[0].main}</h1>
-            <h1>temp: {cityWeatherData.data.main.temp}</h1>
-            <h1>tempFeelsLike: {cityWeatherData.data.main.feels_like}</h1>
-            <h1>visibility: {cityWeatherData.data.visibility}m</h1>
-            <h1>windSpeed: {cityWeatherData.data.wind.speed}m/s</h1>
+            <h1>{name}</h1>
+            <h1>weather: {data.weather[0].main}</h1>
+            <h1>temp: {data.main.temp}</h1>
+            <h1>tempFeelsLike: {data.main.feels_like}</h1>
+            <h1>visibility: {data.visibility}m</h1>
+            <h1>windSpeed: {data.wind.speed}m/s</h1>
         </div>
     ) : (
         <div />
