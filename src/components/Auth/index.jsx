@@ -1,20 +1,19 @@
-import { useState } from 'react';
-import ApiCalendar from 'react-google-calendar-api';
-import { config } from '../../helpers/apiCalendar/apiCalendarConfig';
+import { useDispatch, useSelector } from 'react-redux';
+import { apiCalendar } from '../../helpers/apiCalendar/apiCalendarConfig';
+import { signIn, signOut } from '../../store/actions/auth';
 
 function Auth() {
-    const [isSignedIn, setIsSignedIn] = useState(false);
-
-    const apiCalendar = new ApiCalendar(config);
+    const isSignedIn = useSelector((state) => state.user.isSignedIn);
+    const dispatch = useDispatch();
 
     const handleSignInClick = () => {
         apiCalendar.handleAuthClick();
-        setIsSignedIn(true);
+        dispatch(signIn);
     };
 
     const handleSignOutClick = () => {
         apiCalendar.handleSignoutClick();
-        setIsSignedIn(false);
+        dispatch(signOut);
     };
 
     if (isSignedIn)

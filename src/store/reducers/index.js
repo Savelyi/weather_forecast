@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { cityForecast } from './cityForecast';
+import { cityForecastReducer } from './cityForecast';
+import { authReducer } from './authReducer';
 
 export default combineReducers({
-    city: cityForecast,
+    city: cityForecastReducer,
+    user: authReducer,
 });

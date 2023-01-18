@@ -5,7 +5,7 @@ const defaultState = {
     data: null,
 };
 
-export const cityForecast = (state = defaultState, action) => {
+export const cityForecastReducer = (state = defaultState, action) => {
     switch (action.type) {
         case 'CHANGE_CITY':
             console.log(action);
