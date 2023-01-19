@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import GetWeather from '../helpers/GetWeather';
+import GetDailyWeather from '../helpers/GetDailyWeather';
 import GetUserLocation from '../helpers/GetUserLocation';
 
 function SetCityForm() {
@@ -12,7 +12,7 @@ function SetCityForm() {
         if (stateCityName !== null) return;
         const userCity = GetUserLocation();
         userCity.then((res) => {
-            GetWeather(res, dispatch);
+            GetDailyWeather(res, dispatch);
         });
     }, []);
 
@@ -21,7 +21,7 @@ function SetCityForm() {
         if (city.trim() === '' || stateCityName === city) {
             return;
         }
-        GetWeather(city, dispatch);
+        GetDailyWeather(city, dispatch);
     };
 
     const handleChange = (e) => {

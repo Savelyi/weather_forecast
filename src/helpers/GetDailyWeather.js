@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { changeCity } from '../store/actions/changeCity';
-import { apiWeatherUrl } from '../constants/apiUrls';
+import { apiDailyWeatherUrl } from '../constants/apiUrls';
 
-function GetWeather(city, dispatch) {
+function GetDailyWeather(city, dispatch) {
     return axios
-        .get(apiWeatherUrl, {
+        .get(apiDailyWeatherUrl, {
             params: {
                 q: city,
                 appid: process.env.REACT_APP_API_WEATHER_KEY,
@@ -16,4 +16,4 @@ function GetWeather(city, dispatch) {
         );
 }
 
-export default GetWeather;
+export default GetDailyWeather;
