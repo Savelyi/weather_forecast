@@ -1,27 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import GetDailyWeather from '../helpers/GetDailyWeather';
-import GetUserLocation from '../helpers/GetUserLocation';
+import { changeCity } from '../store/actions/changeCity';
 
 function SetCityForm() {
     const [city, setCity] = useState('');
-    const dispatch = useDispatch();
-    const stateCityName = useSelector((state) => state.daily.name);
 
-    useEffect(() => {
-        if (stateCityName !== null) return;
-        const userCity = GetUserLocation();
-        userCity.then((res) => {
-            GetDailyWeather(res, dispatch);
-        });
-    }, []);
+    const dispatch = useDispatch();
+    const stateCityName = useSelector((state) => state.city.name);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (city.trim() === '' || stateCityName === city) {
             return;
         }
-        GetDailyWeather(city, dispatch);
+        dispatch(changeCity(city));
     };
 
     const handleChange = (e) => {

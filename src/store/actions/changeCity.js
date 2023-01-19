@@ -1,5 +1,4 @@
-export const changeCity = (city, data) => ({
+export const changeCity = (cityName) => ({
     type: 'CHANGE_CITY',
-    city,
-    data,
+    name: cityName,
 });

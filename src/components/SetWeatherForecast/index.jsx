@@ -6,11 +6,11 @@ function SetWeatherForecast() {
     const dispatch = useDispatch();
 
     const handleDailyButton = () => {
-        dispatch(changeToDaily(Weather.DAILY));
+        dispatch(changeToDaily(Weather.CURRENT));
     };
 
     const handleForDaysButton = () => {
-        dispatch(changeToDaily(Weather.GENERAL));
+        dispatch(changeToDaily(Weather.FORECAST));
     };
 
     return (

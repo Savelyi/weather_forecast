@@ -1,4 +1,4 @@
 export const Weather = {
-    DAILY: 'DAILY',
-    GENERAL: 'GENERAL',
+    CURRENT: 'CURRENT',
+    FORECAST: 'FORECAST',
 };

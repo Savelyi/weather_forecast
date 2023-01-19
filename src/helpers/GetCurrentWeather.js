@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { changeCity } from '../store/actions/changeCity';
 import { apiDailyWeatherUrl } from '../constants/apiUrls';
 
-function GetDailyWeather(city, dispatch) {
+
+function GetCurrentWeather(city) {
     return axios
         .get(apiDailyWeatherUrl, {
             params: {
@@ -11,9 +11,7 @@ function GetDailyWeather(city, dispatch) {
                 units: 'metric',
             },
         })
-        .then((response) =>
-            dispatch(changeCity(response.data.name, response.data))
-        );
+        .then((response) => response.data);
 }
 
-export default GetDailyWeather;
+export default GetCurrentWeather;
