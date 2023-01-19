@@ -30,7 +30,9 @@ function WeatherForecast() {
                         {dayWeather.temp}C, Date: {dayWeather.valid_date}
                         <img
                             src={`https://www.weatherbit.io/static/img/icons/${dayWeather.weather.icon}.png`}
-                            alt="Flowers in Chania"
+                            alt={`${dayWeather.weather.code}`}
+                            width="100"
+                            height="100"
                         />
                     </li>
                 ))}
