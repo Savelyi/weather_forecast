@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import { cityForecastReducer } from './cityForecast';
+import { dailyForecast } from './dailyForecast';
+import { generalForecast } from './generalForecast';
+import { weatherService } from './weatherService';
 import { authReducer } from './authReducer';
 
 export default combineReducers({
-    city: cityForecastReducer,
+    daily: dailyForecast,
+    general: generalForecast,
     user: authReducer,
+    service: weatherService,
 });

@@ -6,7 +6,7 @@ import GetUserLocation from '../helpers/GetUserLocation';
 function SetCityForm() {
     const [city, setCity] = useState('');
     const dispatch = useDispatch();
-    const stateCityName = useSelector((state) => state.city.name);
+    const stateCityName = useSelector((state) => state.daily.name);
 
     useEffect(() => {
         if (stateCityName !== null) return;
