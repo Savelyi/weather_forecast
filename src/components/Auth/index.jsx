@@ -7,8 +7,8 @@ function Auth() {
     async function googleSignIn() {
         const { error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
-            oprtions: {
-                scopes: 'https//www.googleapis.com/auth/calendar https://www.googleapis.com/calendar/v3/calendars',
+            options: {
+                scopes: 'https://www.googleapis.com/auth/calendar',
             },
         });
         if (error) {
