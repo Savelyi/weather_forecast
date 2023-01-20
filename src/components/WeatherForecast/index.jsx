@@ -10,10 +10,8 @@ function WeatherForecast() {
 
     useEffect(() => {
         if (city === null || (data !== null && data.city_name === city)) return;
-        const getData = GetWeatherForecast(city);
 
-        getData.then((res) => {
-            console.log(res);
+        GetWeatherForecast(city).then((res) => {
             dispatch(weatherForecastData(res));
         });
 
@@ -37,7 +35,6 @@ function WeatherForecast() {
                     </li>
                 ))}
             </ul>
-            <h1>Data fetched and showed</h1>
         </div>
     ) : (
         <div />

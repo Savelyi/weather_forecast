@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { apiDailyWeatherUrl } from '../constants/apiUrls';
 
-
 function GetCurrentWeather(city) {
     return axios
         .get(apiDailyWeatherUrl, {

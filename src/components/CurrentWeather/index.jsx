@@ -8,12 +8,9 @@ function CurrentWeather() {
     const data = useSelector((state) => state.current.data);
     const dispatch = useDispatch();
 
-    console.log(data);
     useEffect(() => {
         if (city === null || (data !== null && data.name === city)) return;
-        const getData = GetCurrentWeather(city);
-
-        getData.then((res) => {
+        GetCurrentWeather(city).then((res) => {
             dispatch(currentWeatherData(res));
         });
 
@@ -28,7 +25,7 @@ function CurrentWeather() {
                 width="150"
                 height="150"
             />
-            <h1>{city}</h1>
+            <h1>{data.name}</h1>
             <h1>weather: {data.weather[0].main}</h1>
             <h1>temp: {data.main.temp}</h1>
             <h1>tempFeelsLike: {data.main.feels_like}</h1>
