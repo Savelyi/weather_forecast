@@ -1,16 +1,17 @@
 import axios from 'axios';
+import { googleApiGetEventsUrl } from '../constants/apiUrls';
 
 function GetUserEvents(token) {
     const now = new Date();
     return axios
         .get(
-            'https://www.googleapis.com/calendar/v3/calendars/primary/events',
+            googleApiGetEventsUrl,
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
                 params: {
-                    timeMin: new Date().toISOString(),
+                    timeMin: now.toISOString(),
                     timeMax: new Date(
                         now.setDate(now.getDate() + 3)
                     ).toISOString(),

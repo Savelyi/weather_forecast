@@ -1,4 +1,4 @@
-import BaseWeather from '../BaseWeather/index';
+import BaseWeather from '../Weather/index';
 import Footer from '../Footer/index';
 import GoogleEventsList from '../GoogleEventsList/index';
 

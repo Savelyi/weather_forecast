@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import GetCurrentWeather from '../../helpers/GetCurrentWeather';
-import { currentWeatherData } from '../../store/actions/currentWeatherData';
+import GetCurrentWeather from '../../../helpers/GetCurrentWeather';
+import { currentWeatherData } from '../../../store/actions/currentWeatherData';
 
 function CurrentWeather() {
     const city = useSelector((state) => state.city.name);

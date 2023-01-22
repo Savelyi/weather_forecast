@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { weatherForecastData } from '../../store/actions/weatherForecastData';
-import GetWeatherForecast from '../../helpers/GetWeatherForecast';
+import { weatherForecastData } from '../../../store/actions/weatherForecastData';
+import GetWeatherForecast from '../../../helpers/GetWeatherForecast';
 
 function WeatherForecast() {
     const city = useSelector((state) => state.city.name);
@@ -9,14 +9,14 @@ function WeatherForecast() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (city === null || (data !== null && data.city_name === city)) return;
+        if (data !== null && data.city_name === city) return;
 
         GetWeatherForecast(city).then((res) => {
             dispatch(weatherForecastData(res));
         });
 
         console.log(`useEffect entry Forecast Weather`);
-    }, [data === null, city]);
+    }, [city]);
 
     return data !== null ? (
         <div>

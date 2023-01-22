@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GetUserEvents from '../../helpers/GetUserEvents';
 import { userEvents } from '../../store/actions/userEvents';
-import Event from './googleEvent/event';
+import Event from './googleEvent/Event';
 
 function GoogleEventsList() {
     const session = useSession();
@@ -16,7 +16,7 @@ function GoogleEventsList() {
             data !== null &&
             session.user.email === data.summary
         ) {
-            console.log(`data up to date or user nor authorized`);
+            console.log(`data up to date or user not authorized`);
             return;
         }
         if (session) {
