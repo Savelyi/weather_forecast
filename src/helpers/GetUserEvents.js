@@ -2,7 +2,7 @@ import axios from 'axios';
 
 function GetUserEvents(token) {
     const now = new Date();
-    axios
+    return axios
         .get(
             'https://www.googleapis.com/calendar/v3/calendars/primary/events',
             {
@@ -14,11 +14,12 @@ function GetUserEvents(token) {
                     timeMax: new Date(
                         now.setDate(now.getDate() + 3)
                     ).toISOString(),
-                    orderBy: 'updated',
+                    singleEvents: 'true',
+                    orderBy: 'startTime',
                 },
             }
         )
-        .then((res) => console.log(res));
+        .then((res) => res.data);
 }
 
 export default GetUserEvents;

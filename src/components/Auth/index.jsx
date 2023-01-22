@@ -21,8 +21,6 @@ function Auth() {
         await supabase.auth.signOut();
     }
 
-    console.log(session);
-
     return (
         <div>
             {session ? (
