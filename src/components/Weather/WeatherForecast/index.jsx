@@ -9,7 +9,7 @@ function WeatherForecast() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (data !== null && data.city_name === city) return;
+        if (city === null || (data !== null && data.city_name === city)) return;
 
         GetWeatherForecast(city).then((res) => {
             dispatch(weatherForecastData(res));

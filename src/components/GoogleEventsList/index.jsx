@@ -22,8 +22,8 @@ function GoogleEventsList() {
         if (session) {
             GetUserEvents(session.provider_token).then((res) => {
                 dispatch(userEvents(res));
+                console.log(`data was fetched`);
             });
-            console.log(`data was fetched`);
         }
     }, [session]);
 
