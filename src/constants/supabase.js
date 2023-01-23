@@ -1,0 +1,3 @@
+export const supabaseUrl = 'https://riezlmmopjzhymmmizmy.supabase.co';
+export const supabaseKey =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJpZXpsbW1vcGp6aHltbW1pem15Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzQyMDg3MTYsImV4cCI6MTk4OTc4NDcxNn0.Af1kTo-SQ91u3Rq1Pd0iiu1YqPY91BpNDDbbBVfxq7E';

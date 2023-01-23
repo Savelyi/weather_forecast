@@ -6,4 +6,7 @@ export const apiGeneralWeatherUrl =
 
 export const apiAbstractUrl = 'https://ipgeolocation.abstractapi.com/v1/';
 
-export const googleApiGetEventsUrl='https://www.googleapis.com/calendar/v3/calendars/primary/events'
+export const googleApiGetEventsUrl =
+    'https://www.googleapis.com/calendar/v3/calendars/primary/events';
+
+export const googleApiAuthScope = 'https://www.googleapis.com/auth/calendar';

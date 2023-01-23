@@ -1,4 +1,5 @@
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
+import { googleApiAuthScope } from '../../../constants/apiUrls';
 
 function Auth() {
     const session = useSession(); // tokens
@@ -8,7 +9,7 @@ function Auth() {
         const { error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                scopes: 'https://www.googleapis.com/auth/calendar',
+                scopes: googleApiAuthScope,
             },
         });
         if (error) {
