@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import GetCurrentWeather from '../../../helpers/GetCurrentWeather';
-import { currentWeatherData } from '../../../store/actions/currentWeatherData';
+import GetCurrentWeather from '../../helpers/GetCurrentWeather';
+import { currentWeatherData } from '../../store/actions/currentWeatherData';
 
 function CurrentWeather() {
     const city = useSelector((state) => state.city.name);
@@ -32,9 +32,7 @@ function CurrentWeather() {
             <h1>visibility: {data.visibility}m</h1>
             <h1>windSpeed: {data.wind.speed}m/s</h1>
         </div>
-    ) : (
-        <div />
-    );
+    ) : null;
 }
 
 export default CurrentWeather;

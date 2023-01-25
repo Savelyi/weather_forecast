@@ -1,5 +1,5 @@
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
-import { googleApiAuthScope } from '../../../constants/apiUrls';
+import { googleApiAuthScope } from '../../constants/apiUrls';
 
 function Auth() {
     const session = useSession(); // tokens

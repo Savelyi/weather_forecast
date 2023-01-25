@@ -1,6 +1,6 @@
-import SetCityForm from '../../forms/index';
-import SetWeatherForecast from './SetWeatherForecast';
-import Auth from './Auth';
+import SetCityForm from '../SetCityFrom/index';
+import SetWeatherForecast from '../SetWeatherService';
+import Auth from '../Auth';
 
 function Footer() {
     return (

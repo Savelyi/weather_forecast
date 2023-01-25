@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { Weather } from '../../../constants/weather';
-import { changeToDaily } from '../../../store/actions/changeWeatherService';
+import { Weather } from '../../constants/weather';
+import { changeToDaily } from '../../store/actions/changeWeatherService';
 
 function SetWeatherForecast() {
     const dispatch = useDispatch();

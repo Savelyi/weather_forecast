@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import GetCurrentWeather from '../helpers/GetCurrentWeather';
-import GetWeatherForecast from '../helpers/GetWeatherForecast';
-import { Weather } from '../constants/weather';
-import { weatherForecastData } from '../store/actions/weatherForecastData';
-import { currentWeatherData } from '../store/actions/currentWeatherData';
-import { changeCity } from '../store/actions/changeCity';
+import GetCurrentWeather from '../../helpers/GetCurrentWeather';
+import GetWeatherForecast from '../../helpers/GetWeatherForecast';
+import { Weather } from '../../constants/weather';
+import { weatherForecastData } from '../../store/actions/weatherForecastData';
+import { currentWeatherData } from '../../store/actions/currentWeatherData';
+import { changeCity } from '../../store/actions/changeCity';
 
 function SetCityForm() {
     const [city, setCity] = useState('');

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GetUserEvents from '../../helpers/GetUserEvents';
 import { userEvents } from '../../store/actions/userEvents';
-import Event from './googleEvent/Event';
+import Event from '../GoogleEvent';
 
 function GoogleEventsList() {
     const session = useSession();
@@ -35,9 +35,7 @@ function GoogleEventsList() {
                 ))}
             </ul>
         </div>
-    ) : (
-        <div />
-    );
+    ) : null;
 }
 
 export default GoogleEventsList;

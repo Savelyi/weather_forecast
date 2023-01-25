@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { changeCity } from '../store/actions/changeCity';
 import { apiGeneralWeatherUrl } from '../constants/apiUrls';
 
 function GetWeatherForecast(cityName) {

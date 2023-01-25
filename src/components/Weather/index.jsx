@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Weather } from '../../constants/weather';
 import GetUserLocation from '../../helpers/GetUserLocation';
 import { changeCity } from '../../store/actions/changeCity';
-import CurrentWeather from './CurrentWeather';
-import WeatherForecast from './WeatherForecast';
+import CurrentWeather from '../CurrentWeather';
+import WeatherForecast from '../WeatherForecast';
 
 function BaseWeather() {
     const city = useSelector((state) => state.city.name);
@@ -25,6 +25,7 @@ function BaseWeather() {
         case Weather.FORECAST:
             return <WeatherForecast />;
         default:
+            return null;
     }
 }
 

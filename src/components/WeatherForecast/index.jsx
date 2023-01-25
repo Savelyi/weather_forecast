@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { weatherForecastData } from '../../../store/actions/weatherForecastData';
-import GetWeatherForecast from '../../../helpers/GetWeatherForecast';
+import { weatherForecastData } from '../../store/actions/weatherForecastData';
+import GetWeatherForecast from '../../helpers/GetWeatherForecast';
 
 function WeatherForecast() {
     const city = useSelector((state) => state.city.name);
@@ -36,9 +36,7 @@ function WeatherForecast() {
                 ))}
             </ul>
         </div>
-    ) : (
-        <div />
-    );
+    ) : null;
 }
 
 export default WeatherForecast;
