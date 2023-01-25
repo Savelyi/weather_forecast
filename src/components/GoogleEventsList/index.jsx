@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import GetUserEvents from '../../helpers/GetUserEvents';
 import { userEvents } from '../../store/actions/userEvents';
 import Event from '../GoogleEvent';
+import { Wrapper } from './styled';
 
 function GoogleEventsList() {
     const session = useSession();
@@ -28,13 +29,13 @@ function GoogleEventsList() {
     }, [session]);
 
     return session && data !== null ? (
-        <div>
+        <Wrapper>
             <ul>
                 {data.items.map((googleEvent) => (
                     <Event key={googleEvent.id} googleEvent={googleEvent} />
                 ))}
             </ul>
-        </div>
+        </Wrapper>
     ) : null;
 }
 

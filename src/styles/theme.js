@@ -8,6 +8,6 @@ export const baseTheme = {
 
     typography: {
         fontFamily: 'Segoe UI',
-        fontWeight: '500',
+        fontWeight: '650',
     },
 };

@@ -6,14 +6,14 @@ function Event(props) {
     if (gEvent.start.dateTime === undefined)
         return (
             <li>
-                Time: {moment(gEvent.start.date).format('dddd')}, FullDay, name:{' '}
+                {moment(gEvent.start.date).format('DD-MM dddd')}, FullDay,{' '}
                 {gEvent.summary}
             </li>
         );
     return (
         <li>
-            Time: {moment(gEvent.start.dateTime).format('dddd LT')} –{' '}
-            {moment(gEvent.end.dateTime).format('LT')}, name: {gEvent.summary}
+            {moment(gEvent.start.dateTime).format('DD-MM dddd')} –{' '}
+            {moment(gEvent.end.dateTime).format('LT')}, {gEvent.summary}
         </li>
     );
 }
