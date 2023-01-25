@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     position: relative;
     color: black;
-    top: 10rem;
     img {
         width: 5rem;
         height: 5rem;
