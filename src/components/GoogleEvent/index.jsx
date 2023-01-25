@@ -12,7 +12,7 @@ function Event(props) {
         );
     return (
         <li>
-            {moment(gEvent.start.dateTime).format('DD-MM dddd')} –{' '}
+            {moment(gEvent.start.dateTime).format('DD-MM dddd LT')} –{' '}
             {moment(gEvent.end.dateTime).format('LT')}, {gEvent.summary}
         </li>
     );
