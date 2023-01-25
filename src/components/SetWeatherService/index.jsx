@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { Weather } from '../../constants/weather';
 import { changeToDaily } from '../../store/actions/changeWeatherService';
+import { Button } from './styled';
 
 function SetWeatherForecast() {
     const dispatch = useDispatch();
@@ -15,12 +16,12 @@ function SetWeatherForecast() {
 
     return (
         <div>
-            <button type="button" onClick={handleDailyButton}>
+            <Button type="button" onClick={handleDailyButton}>
                 Daily
-            </button>
-            <button type="button" onClick={handleForDaysButton}>
-                For 5 days
-            </button>
+            </Button>
+            <Button type="button" onClick={handleForDaysButton}>
+                Summary
+            </Button>
         </div>
     );
 }

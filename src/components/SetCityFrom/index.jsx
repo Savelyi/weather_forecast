@@ -6,6 +6,7 @@ import { Weather } from '../../constants/weather';
 import { weatherForecastData } from '../../store/actions/weatherForecastData';
 import { currentWeatherData } from '../../store/actions/currentWeatherData';
 import { changeCity } from '../../store/actions/changeCity';
+import { CityInput, SearchButton, Wrapper } from './styled';
 
 function SetCityForm() {
     const [city, setCity] = useState('');
@@ -43,8 +44,15 @@ function SetCityForm() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input value={city} onChange={handleChange} />
-            <button type="submit">find</button>
+            <Wrapper>
+                <CityInput value={city} onChange={handleChange} />
+                <SearchButton>
+                    <img
+                        src="https://cdn-icons-png.flaticon.com/512/966/966642.png"
+                        alt=""
+                    />
+                </SearchButton>
+            </Wrapper>
         </form>
     );
 }

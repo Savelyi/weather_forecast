@@ -7,8 +7,8 @@ function Header() {
     return (
         <HeaderWrapper>
             <Auth />
-            <SetCityForm />
             <SetWeatherForecast />
+            <SetCityForm />
         </HeaderWrapper>
     );
 }
