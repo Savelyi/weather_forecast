@@ -6,6 +6,8 @@ export const CityInput = styled.input`
     border: 0px;
     margin: 1.5px;
     height: 2rem;
+    width: 7rem;
+    padding-left: 0.5rem;
 `;
 
 export const SearchButton = styled.button`

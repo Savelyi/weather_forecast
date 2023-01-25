@@ -1,4 +1,4 @@
-import SetCityForm from '../SetCityFrom/index';
+import SetCityForm from '../SetCityForm/index';
 import SetWeatherForecast from '../SetWeatherService';
 import Auth from '../Auth';
 import { HeaderWrapper } from './styled';

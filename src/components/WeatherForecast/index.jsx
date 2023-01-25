@@ -1,7 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import moment from 'moment/moment';
 import { weatherForecastData } from '../../store/actions/weatherForecastData';
 import GetWeatherForecast from '../../helpers/GetWeatherForecast';
+import { Wrapper } from './styled';
 
 function WeatherForecast() {
     const city = useSelector((state) => state.city.name);
@@ -19,23 +21,32 @@ function WeatherForecast() {
     }, [city]);
 
     return data !== null ? (
-        <div>
+        <Wrapper>
             <h1>{city}</h1>
             <ul>
                 {data.data.map((dayWeather) => (
                     <li key={dayWeather.valid_date}>
-                        Weather: {dayWeather.weather.description}, Temp:{' '}
-                        {dayWeather.temp}C, Date: {dayWeather.valid_date}
-                        <img
-                            src={`https://www.weatherbit.io/static/img/icons/${dayWeather.weather.icon}.png`}
-                            alt={`${dayWeather.weather.code}`}
-                            width="100"
-                            height="100"
-                        />
+                        <div>
+                            <img
+                                src={`https://www.weatherbit.io/static/img/icons/${dayWeather.weather.icon}.png`}
+                                alt={`${dayWeather.weather.code}`}
+                            />
+                            <h3> Weather: {dayWeather.weather.description}</h3>
+                            <h3>
+                                Temp:
+                                {dayWeather.temp}&#176;C
+                            </h3>
+                            <h3>
+                                Date:{' '}
+                                {moment(dayWeather.valid_date).format(
+                                    'DD-MM dddd'
+                                )}
+                            </h3>
+                        </div>
                     </li>
                 ))}
             </ul>
-        </div>
+        </Wrapper>
     ) : null;
 }
 

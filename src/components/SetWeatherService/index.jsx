@@ -17,10 +17,10 @@ function SetWeatherForecast() {
     return (
         <div>
             <Button type="button" onClick={handleDailyButton}>
-                Daily
+                Today
             </Button>
             <Button type="button" onClick={handleForDaysButton}>
-                Summary
+                5 Days
             </Button>
         </div>
     );

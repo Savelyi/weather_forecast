@@ -45,7 +45,11 @@ function SetCityForm() {
     return (
         <form onSubmit={handleSubmit}>
             <Wrapper>
-                <CityInput value={city} onChange={handleChange} />
+                <CityInput
+                    placeholder="Search"
+                    value={city}
+                    onChange={handleChange}
+                />
                 <SearchButton>
                     <img
                         src="https://cdn-icons-png.flaticon.com/512/966/966642.png"
