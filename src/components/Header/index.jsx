@@ -1,15 +1,16 @@
 import SetCityForm from '../SetCityFrom/index';
 import SetWeatherForecast from '../SetWeatherService';
 import Auth from '../Auth';
+import { HeaderWrapper } from './styled';
 
-function Footer() {
+function Header() {
     return (
-        <div>
+        <HeaderWrapper>
             <Auth />
             <SetCityForm />
             <SetWeatherForecast />
-        </div>
+        </HeaderWrapper>
     );
 }
 
-export default Footer;
+export default Header;

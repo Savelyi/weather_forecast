@@ -1,5 +1,6 @@
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 import { googleApiAuthScope } from '../../constants/apiUrls';
+import { AuthButton } from './styled';
 
 function Auth() {
     const session = useSession(); // tokens
@@ -25,16 +26,19 @@ function Auth() {
     return (
         <div>
             {session ? (
-                <>
-                    <h2>Hey there {session.user.email}</h2>
-                    <button type="button" onClick={() => signOut()}>
-                        Sign Out
-                    </button>
-                </>
+                <AuthButton data-title="Sign Out" onClick={() => signOut()}>
+                    <img
+                        src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
+                        alt=""
+                    />
+                </AuthButton>
             ) : (
-                <button type="button" onClick={() => googleSignIn()}>
-                    Sign In With Google
-                </button>
+                <AuthButton data-title="Sign In" onClick={() => googleSignIn()}>
+                    <img
+                        src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
+                        alt=""
+                    />
+                </AuthButton>
             )}
         </div>
     );

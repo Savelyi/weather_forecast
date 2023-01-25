@@ -1,14 +1,15 @@
 import BaseWeather from '../Weather/index';
-import Footer from '../Footer/index';
+import Header from '../Header/index';
 import GoogleEventsList from '../GoogleEventsList/index';
+import { BaseAppFrame } from './styled';
 
 function App() {
     return (
-        <div>
-            <Footer />
+        <BaseAppFrame>
+            <Header />
             <BaseWeather />
             <GoogleEventsList />
-        </div>
+        </BaseAppFrame>
     );
 }
 

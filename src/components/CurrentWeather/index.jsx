@@ -26,11 +26,11 @@ function CurrentWeather() {
                 height="150"
             />
             <h1>{data.name}</h1>
-            <h1>weather: {data.weather[0].main}</h1>
-            <h1>temp: {data.main.temp}</h1>
-            <h1>tempFeelsLike: {data.main.feels_like}</h1>
-            <h1>visibility: {data.visibility}m</h1>
-            <h1>windSpeed: {data.wind.speed}m/s</h1>
+            <h3>weather: {data.weather[0].main}</h3>
+            <h3>temp: {data.main.temp}</h3>
+            <h3>tempFeelsLike: {data.main.feels_like}</h3>
+            <h3>visibility: {data.visibility}m</h3>
+            <h3>windSpeed: {data.wind.speed}m/s</h3>
         </div>
     ) : null;
 }
