@@ -14,8 +14,6 @@ function CurrentWeather() {
         GetCurrentWeather(city).then((res) => {
             dispatch(currentWeatherData(res));
         });
-
-        console.log(`useEffect entry Current Weather`);
     }, [city]);
 
     return data !== null ? (
