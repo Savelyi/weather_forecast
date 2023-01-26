@@ -1,12 +1,12 @@
 import styled from 'styled-components';
+import { baseTheme } from '../../styles/theme';
 
 export const HeaderWrapper = styled.div`
     display: flexbox;
     flex-direction: row;
-    background-color: #211f1fad;
+    background-color: ${baseTheme.colors.primary};
     align-items: center;
     justify-content: flex-end;
-    width: 100vw;
-    min-height: 4.5rem;
-    height: fit-content;
+    width: inherit;
+    min-height: ${baseTheme.header.height};
 `;

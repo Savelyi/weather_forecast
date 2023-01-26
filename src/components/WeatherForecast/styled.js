@@ -1,18 +1,18 @@
 import styled from 'styled-components';
+import { baseTheme } from '../../styles/theme';
 
 export const Wrapper = styled.div`
     position: relative;
-    color: black;
     img {
-        width: 5rem;
-        height: 5rem;
+        width: ${baseTheme.forecastWrapper.imgSize};
+        height: ${baseTheme.forecastWrapper.imgSize};
     }
 
     li {
         display: inline-flex;
-        width: 15rem;
-        border: 0.5rem solid #211f1fad;
-        margin: 1rem;
+        width: ${baseTheme.forecastWrapper.li.width};
+        border: ${baseTheme.forecastWrapper.li.border};
+        margin: ${baseTheme.forecastWrapper.li.margin};
         flex-wrap: nowrap;
         justify-content: center;
     }

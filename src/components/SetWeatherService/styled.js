@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { baseTheme } from '../../styles/theme';
 
 export const Button = styled.button`
     border-radius: 0.5rem;
-    background: #ffffff9b;
+    background: ${baseTheme.colors.buttonsAndInput};
     cursor: pointer;
-    border: 0px;
-    margin: 1.5px;
-    height: 2rem;
-    width: 4rem;
+    border: none;
+    margin: ${baseTheme.serviceButtons.margin};
+    height: ${baseTheme.serviceButtons.height};
+    width: ${baseTheme.serviceButtons.width};
 `;

@@ -1,18 +1,19 @@
 import styled from 'styled-components';
+import { baseTheme } from '../../styles/theme';
 
 export const Wrapper = styled.div`
     display: flexbox;
-    font-size: 2rem;
+    font-size: ${baseTheme.currentWeatherWrapper.fontSize};
     flex-direction: column;
     flex-wrap: wrap;
-    height: 23rem;
-    width: 28rem;
+    height: ${baseTheme.currentWeatherWrapper.height};
+    width: ${baseTheme.currentWeatherWrapper.width};
     justify-content: center;
 
     img {
-        width: 15rem;
-        height: 15rem;
-        margin-right: 15rem;
+        width: ${baseTheme.currentWeatherWrapper.imgSize};
+        height: ${baseTheme.currentWeatherWrapper.imgSize};
+        margin-right: ${baseTheme.currentWeatherWrapper.imgMarginRight};
     }
     h1#main {
         text-align: center;
@@ -20,21 +21,21 @@ export const Wrapper = styled.div`
 
     h1#temp {
         position: relative;
-        bottom: 13rem;
-        left: 11.5rem;
+        bottom: ${baseTheme.currentWeatherWrapper.h1Temp.bottom};
+        left: ${baseTheme.currentWeatherWrapper.h1Temp.left};
         text-align: center;
     }
 
     h2 {
         position: relative;
-        right: 6rem;
-        bottom: 5rem;
+        right: ${baseTheme.currentWeatherWrapper.h2.right};
+        bottom: ${baseTheme.currentWeatherWrapper.h2.bottom};
     }
 
     h6 {
         position: relative;
-        bottom: 6rem;
-        width: 25rem;
+        bottom: ${baseTheme.currentWeatherWrapper.h6.bottom};
+        width: ${baseTheme.currentWeatherWrapper.h6.width};
         text-align: center;
     }
 `;

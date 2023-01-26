@@ -11,5 +11,5 @@ export const BaseAppFrame = styled.div`
     align-items: center;
     width: 100vw;
     height: 100vh;
-    transition: 500ms linear;
+    transition: 500ms background linear;
 `;
