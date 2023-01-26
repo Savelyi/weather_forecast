@@ -16,8 +16,6 @@ function WeatherForecast() {
         GetWeatherForecast(city).then((res) => {
             dispatch(weatherForecastData(res));
         });
-
-        console.log(`useEffect entry Forecast Weather`);
     }, [city]);
 
     return data !== null ? (
