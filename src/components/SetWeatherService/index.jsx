@@ -1,17 +1,17 @@
 import { useDispatch } from 'react-redux';
 import { Weather } from '../../constants/weather';
-import { changeToDaily } from '../../store/actions/changeWeatherService';
+import { changeService } from '../../store/actions/changeWeatherService';
 import { Button } from './styled';
 
 function SetWeatherForecast() {
     const dispatch = useDispatch();
 
     const handleDailyButton = () => {
-        dispatch(changeToDaily(Weather.CURRENT));
+        dispatch(changeService(Weather.CURRENT));
     };
 
     const handleForDaysButton = () => {
-        dispatch(changeToDaily(Weather.FORECAST));
+        dispatch(changeService(Weather.FORECAST));
     };
 
     return (

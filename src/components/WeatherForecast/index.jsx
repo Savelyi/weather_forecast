@@ -4,6 +4,7 @@ import moment from 'moment/moment';
 import { weatherForecastData } from '../../store/actions/weatherForecastData';
 import GetWeatherForecast from '../../helpers/GetWeatherForecast';
 import { Wrapper } from './styled';
+import Loader from '../Loader';
 
 function WeatherForecast() {
     const city = useSelector((state) => state.city.name);
@@ -45,7 +46,9 @@ function WeatherForecast() {
                 ))}
             </ul>
         </Wrapper>
-    ) : null;
+    ) : (
+        <Loader />
+    );
 }
 
 export default WeatherForecast;

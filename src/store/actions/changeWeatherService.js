@@ -1,5 +1,4 @@
-export const changeToDaily = (weather) => ({
+export const changeService = (weather) => ({
     type: 'CHANGE_WEATHER_SERVICE',
-    service: weather
+    service: weather,
 });
-

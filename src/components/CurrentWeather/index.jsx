@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import GetCurrentWeather from '../../helpers/GetCurrentWeather';
 import { currentWeatherData } from '../../store/actions/currentWeatherData';
 import { Wrapper } from './styled';
+import Loader from '../Loader';
 
 function CurrentWeather() {
     const city = useSelector((state) => state.city.name);
@@ -30,7 +31,9 @@ function CurrentWeather() {
                 {data.visibility}m, Wind speed: {data.wind.speed}m/s
             </h6>
         </Wrapper>
-    ) : null;
+    ) : (
+        <Loader />
+    );
 }
 
 export default CurrentWeather;
