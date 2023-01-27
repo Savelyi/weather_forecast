@@ -13,9 +13,7 @@ function BaseWeather() {
 
     useEffect(() => {
         if (city === null) {
-            const userCity = GetUserLocation();
-
-            userCity.then((res) => dispatch(changeCity(res)));
+            GetUserLocation().then((res) => dispatch(changeCity(res)));
         }
     }, []);
 

@@ -10,18 +10,18 @@ function CurrentWeather() {
     const data = useSelector((state) => state.current.data);
     const dispatch = useDispatch();
 
+    const isFetched = data !== null && data.name === city;
+
     useEffect(() => {
-        if (city === null || (data !== null && data.name === city)) {
+        if (city === null || isFetched) {
             return;
         }
         GetCurrentWeather(city).then((res) => {
-            dispatch(currentWeatherData(res));
+            dispatch(currentWeatherData(res.data));
         });
     }, [city]);
 
-    return data === null || data.name !== city ? (
-        <Loader />
-    ) : (
+    return isFetched ? (
         <Wrapper>
             <h1 id="main">{data.name}</h1>
             <img
@@ -35,6 +35,8 @@ function CurrentWeather() {
                 {data.visibility}m, Wind speed: {data.wind.speed}m/s
             </h6>
         </Wrapper>
+    ) : (
+        <Loader />
     );
 }
 

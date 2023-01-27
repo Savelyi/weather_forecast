@@ -10,7 +10,8 @@ function GetCurrentWeather(city) {
                 units: 'metric',
             },
         })
-        .then((response) => response.data);
+        .catch((error) => error.response)
+        .then((response) => response);
 }
 
 export default GetCurrentWeather;

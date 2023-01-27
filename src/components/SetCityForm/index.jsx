@@ -4,6 +4,7 @@ import { Weather } from '../../constants/weather';
 import { changeCity } from '../../store/actions/changeCity';
 import { CityInput, SearchButton, Wrapper } from './styled';
 import { changeService } from '../../store/actions/changeWeatherService';
+import GetCurrentWeather from '../../utils/GetCurrentWeather';
 
 function SetCityForm() {
     const [city, setCity] = useState('');
@@ -17,8 +18,17 @@ function SetCityForm() {
             return;
         }
 
-        dispatch(changeCity(city));
+        GetCurrentWeather(city).then((res) => {
+            if (res.status > 299) {
+                console.log(res.data.message);
+                return;
+            }
+            dispatch(changeCity(res.data.name));
+        });
+
         dispatch(changeService(Weather.CURRENT));
+
+        setCity('');
     };
 
     const handleChange = (e) => {
