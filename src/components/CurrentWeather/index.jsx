@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import GetCurrentWeather from '../../helpers/GetCurrentWeather';
+import GetCurrentWeather from '../../utils/GetCurrentWeather';
 import { currentWeatherData } from '../../store/actions/currentWeatherData';
 import { Wrapper } from './styled';
 import Loader from '../Loader';
@@ -11,13 +11,17 @@ function CurrentWeather() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (city === null || (data !== null && data.name === city)) return;
+        if (city === null || (data !== null && data.name === city)) {
+            return;
+        }
         GetCurrentWeather(city).then((res) => {
             dispatch(currentWeatherData(res));
         });
     }, [city]);
 
-    return data !== null ? (
+    return data === null || data.name !== city ? (
+        <Loader />
+    ) : (
         <Wrapper>
             <h1 id="main">{data.name}</h1>
             <img
@@ -31,8 +35,6 @@ function CurrentWeather() {
                 {data.visibility}m, Wind speed: {data.wind.speed}m/s
             </h6>
         </Wrapper>
-    ) : (
-        <Loader />
     );
 }
 

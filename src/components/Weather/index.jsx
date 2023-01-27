@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Weather } from '../../constants/weather';
-import GetUserLocation from '../../helpers/GetUserLocation';
+import GetUserLocation from '../../utils/GetUserLocation';
 import { changeCity } from '../../store/actions/changeCity';
 import CurrentWeather from '../CurrentWeather';
 import WeatherForecast from '../WeatherForecast';

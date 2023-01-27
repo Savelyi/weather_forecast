@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import moment from 'moment/moment';
 import { weatherForecastData } from '../../store/actions/weatherForecastData';
-import GetWeatherForecast from '../../helpers/GetWeatherForecast';
+import GetWeatherForecast from '../../utils/GetWeatherForecast';
 import { Wrapper } from './styled';
 import Loader from '../Loader';
 
@@ -13,13 +13,14 @@ function WeatherForecast() {
 
     useEffect(() => {
         if (city === null || (data !== null && data.city_name === city)) return;
-
         GetWeatherForecast(city).then((res) => {
             dispatch(weatherForecastData(res));
         });
     }, [city]);
 
-    return data !== null ? (
+    return data === null || data.city_name !== city ? (
+        <Loader />
+    ) : (
         <Wrapper>
             <h1>{city}</h1>
             <ul>
@@ -46,8 +47,6 @@ function WeatherForecast() {
                 ))}
             </ul>
         </Wrapper>
-    ) : (
-        <Loader />
     );
 }
 

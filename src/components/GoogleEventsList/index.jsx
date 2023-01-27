@@ -1,7 +1,7 @@
 import { useSession } from '@supabase/auth-helpers-react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import GetUserEvents from '../../helpers/GetUserEvents';
+import GetUserEvents from '../../utils/GetUserEvents';
 import { userEvents } from '../../store/actions/userEvents';
 import Event from '../GoogleEvent';
 import { Wrapper } from './styled';

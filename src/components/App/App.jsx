@@ -2,7 +2,7 @@ import BaseWeather from '../Weather/index';
 import Header from '../Header/index';
 import GoogleEventsList from '../GoogleEventsList/index';
 import { BaseAppFrame } from './styled';
-import GetWeatherBackground from '../../helpers/GetWeatherBackground';
+import GetWeatherBackground from '../../utils/GetWeatherBackground';
 
 function App() {
     return (
