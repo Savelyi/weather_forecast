@@ -1,4 +1,4 @@
-import { spinnerLoader } from '../../constants/loader';
+import spinnerLoader from '../../assets/images/spinnerLoader.svg';
 import { Image } from './styled';
 
 function Loader() {

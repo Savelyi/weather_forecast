@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Weather } from '../../constants/weather';
+import { weather } from '../../constants/weather';
 import GetUserLocation from '../../utils/GetUserLocation';
-import { changeCity } from '../../store/actions/changeCity';
+import { changeCity } from '../../store/actions/weatherData';
 import CurrentWeather from '../CurrentWeather';
 import WeatherForecast from '../WeatherForecast';
 
@@ -18,9 +18,9 @@ function BaseWeather() {
     }, []);
 
     switch (service.name) {
-        case Weather.CURRENT:
+        case weather.CURRENT:
             return <CurrentWeather />;
-        case Weather.FORECAST:
+        case weather.FORECAST:
             return <WeatherForecast />;
         default:
             return null;

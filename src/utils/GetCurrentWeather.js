@@ -1,12 +1,13 @@
 import axios from 'axios';
-import { apiDailyWeatherUrl } from '../constants/apiUrls';
+import { apiUrls } from '../constants/apiUrls';
+import { apiKeys } from '../constants/apiKeys';
 
 function GetCurrentWeather(city) {
     return axios
-        .get(apiDailyWeatherUrl, {
+        .get(apiUrls.apiCurrentWeather, {
             params: {
                 q: city,
-                appid: process.env.REACT_APP_API_WEATHER_KEY,
+                appid: apiKeys.current_weather_key,
                 units: 'metric',
             },
         })

@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Weather } from '../../constants/weather';
-import { changeCity } from '../../store/actions/changeCity';
+import { weather } from '../../constants/weather';
+import { changeCity, changeService } from '../../store/actions/weatherData';
 import { CityInput, SearchButton, Wrapper } from './styled';
-import { changeService } from '../../store/actions/changeWeatherService';
 import GetCurrentWeather from '../../utils/GetCurrentWeather';
 
 function SetCityForm() {
@@ -26,7 +25,7 @@ function SetCityForm() {
             dispatch(changeCity(res.data.name));
         });
 
-        dispatch(changeService(Weather.CURRENT));
+        dispatch(changeService(weather.CURRENT));
 
         setCity('');
     };

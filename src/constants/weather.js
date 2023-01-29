@@ -1,4 +1,4 @@
-export const Weather = {
+export const weather = {
     CURRENT: 'CURRENT',
     FORECAST: 'FORECAST',
 };

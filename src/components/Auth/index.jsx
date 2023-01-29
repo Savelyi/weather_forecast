@@ -1,16 +1,17 @@
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
-import { googleApiAuthScope } from '../../constants/apiUrls';
 import { AuthButton } from './styled';
 
 function Auth() {
     const session = useSession(); // tokens
     const supabase = useSupabaseClient(); // talk to supabase
 
+    const scope = process.env.REACT_APP_GOOGLE_API_SCOPE;
+
     async function googleSignIn() {
         const { error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                scopes: googleApiAuthScope,
+                scopes: scope,
             },
         });
         if (error) {

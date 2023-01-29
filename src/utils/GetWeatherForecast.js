@@ -1,11 +1,12 @@
 import axios from 'axios';
-import { apiGeneralWeatherUrl } from '../constants/apiUrls';
+import { apiKeys } from '../constants/apiKeys';
+import { apiUrls } from '../constants/apiUrls';
 
 function GetWeatherForecast(cityName) {
     return axios
-        .get(apiGeneralWeatherUrl, {
+        .get(apiUrls.apiForecast, {
             params: {
-                key: process.env.REACT_APP_API_WEATHER_FORECAST_KEY,
+                key: apiKeys.weather_forecast_key,
                 city: cityName,
                 days: 5,
                 units: 'M',

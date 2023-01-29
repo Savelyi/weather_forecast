@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import GetCurrentWeather from '../../utils/GetCurrentWeather';
-import { currentWeatherData } from '../../store/actions/currentWeatherData';
+import { currentWeatherData } from '../../store/actions/weatherData';
 import { Wrapper } from './styled';
 import Loader from '../Loader';
 

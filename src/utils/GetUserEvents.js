@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { googleApiGetEventsUrl } from '../constants/apiUrls';
+import { apiUrls } from '../constants/apiUrls';
 
 function GetUserEvents(token) {
     const now = new Date();
     return axios
-        .get(googleApiGetEventsUrl, {
+        .get(apiUrls.googleApiGetEvents, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

@@ -1,11 +1,12 @@
 import axios from 'axios';
-import { apiAbstractUrl } from '../constants/apiUrls';
+import { apiKeys } from '../constants/apiKeys';
+import { apiUrls } from '../constants/apiUrls';
 
 function GetUserLocation() {
     return axios
-        .get(apiAbstractUrl, {
+        .get(apiUrls.apiAbstract, {
             params: {
-                api_key: process.env.REACT_APP_API_ABSTRACT_KEY,
+                api_key: apiKeys.abstract_key,
             },
         })
         .then((response) => response.data.city);

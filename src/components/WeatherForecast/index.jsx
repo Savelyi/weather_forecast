@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import moment from 'moment/moment';
-import { weatherForecastData } from '../../store/actions/weatherForecastData';
+import { weatherForecastData } from '../../store/actions/weatherData';
 import GetWeatherForecast from '../../utils/GetWeatherForecast';
 import { Wrapper } from './styled';
 import Loader from '../Loader';

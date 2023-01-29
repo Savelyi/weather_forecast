@@ -1,12 +1,7 @@
-export const apiDailyWeatherUrl =
-    'https://api.openweathermap.org/data/2.5/weather';
-
-export const apiGeneralWeatherUrl =
-    'https://api.weatherbit.io/v2.0/forecast/daily';
-
-export const apiAbstractUrl = 'https://ipgeolocation.abstractapi.com/v1/';
-
-export const googleApiGetEventsUrl =
-    'https://www.googleapis.com/calendar/v3/calendars/primary/events';
-
-export const googleApiAuthScope = 'https://www.googleapis.com/auth/calendar';
+export const apiUrls = {
+    apiCurrentWeather: process.env.REACT_APP_API_CURRENT_WEATHER_URL,
+    apiForecast: process.env.REACT_APP_API_FORECAST_URL,
+    apiAbstract: process.env.REACT_APP_API_ABSTRACT_URL,
+    googleApiGetEvents: process.env.REACT_APP_API_EVENTS_URL,
+    supabaseUrl: process.env.REACT_APP_SUPABASE_URL,
+};
